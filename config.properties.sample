@@ -1,0 +1,12 @@
+# Sample config.properties
+# Copy this file to config.properties and fill the values (do NOT commit config.properties)
+
+# JDBC URL
+# Example: jdbc:mysql://localhost:3306/db8
+db.url=jdbc:mysql://localhost:3306/db8
+
+# Database user
+db.user=root
+
+# Database password
+db.password=your_password_here

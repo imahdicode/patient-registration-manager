@@ -88,7 +88,31 @@ CREATE TABLE IF NOT EXISTS registration (
 
 ## Configuration / credentials
 
-For simplicity this project stores the database connection details in `GetConnection.java`. Before running the app, edit `src/com/chp1_project/GetConnection.java` and update the JDBC URL, username and password to match your environment. Do not commit secrets to public repos — consider switching to environment variables or a properties file if you plan to publish this repository.
+For simplicity this project previously used hard-coded credentials, but that is insecure. The application now reads database credentials from environment variables first and falls back to a local `config.properties` file (which is ignored by git).
+
+Recommended approaches (choose one):
+
+- Environment variables (preferred):
+
+  PowerShell example:
+
+  ```powershell
+  $env:DB_URL = "jdbc:mysql://localhost:3306/db8"
+  $env:DB_USER = "root"
+  $env:DB_PASS = "your_password_here"
+  ```
+
+- `config.properties` (convenient for dev machines): copy `config.properties.sample` to `config.properties` and update credentials. `config.properties` is listed in `.gitignore` so it won't be committed.
+
+  Example `config.properties` (do not commit):
+
+  ```ini
+  db.url=jdbc:mysql://localhost:3306/db8
+  db.user=root
+  db.password=your_password_here
+  ```
+
+The code will try environment variables first (DB_URL, DB_USER, DB_PASS), then `config.properties`, then sensible defaults.
 
 ## Build (compile)
 

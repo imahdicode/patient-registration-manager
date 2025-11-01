@@ -29,3 +29,6 @@ ehthumbs.db
 
 # NetBeans
 /nbproject/private/
+ 
+# Local config (example)
+config.properties
