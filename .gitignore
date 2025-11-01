@@ -1,0 +1,31 @@
+/bin/
+/out/
+/target/
+/build/
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+/.idea/
+.vscode/
+.classpath
+.project
+.settings/
+.gradle/
+*.log
+.DS_Store
+local_history/
+
+# OS files
+Thumbs.db
+ehthumbs.db
+
+# IntelliJ
+/.idea/
+
+# Eclipse
+/.settings/
+
+# NetBeans
+/nbproject/private/
